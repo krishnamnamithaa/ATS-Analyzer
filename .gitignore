@@ -27,7 +27,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Large media files (videos, etc.)
-*.mp4
+# *.mp4 (Tracked via Git LFS)
+2.mp4
 *.avi
 *.mkv
 *.mov
