@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_BASE_URL } from "../../config";
 import "./index.css";
 
 const YourResumes = () => {
@@ -35,7 +36,7 @@ const YourResumes = () => {
       const formData = new FormData();
       formData.append("resume", selectedFile);
 
-      const uploadResponse = await fetch("http://localhost:5000/resume/upload", {
+      const uploadResponse = await fetch(`${API_BASE_URL}/resume/upload`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -49,7 +50,7 @@ const YourResumes = () => {
       }
 
       // Step 2: Analyze resume
-      const analyzeResponse = await fetch("http://localhost:5000/resume/analyze", {
+      const analyzeResponse = await fetch(`${API_BASE_URL}/resume/analyze`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
